@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RecallDesk - AI Customer Support</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <header>
+            <h1>RecallDesk</h1>
+            <p>AI-Powered Customer Support Agent</p>
+        </header>
+
+        <main>
+
+            <div class="customer-section">
+                <label for="customerId">Customer ID</label>
+
+                <input
+                    type="text"
+                    id="customerId"
+                    placeholder="Enter Customer ID"
+                    value="C001"
+                >
+            </div>
+
+            <section class="chat-container">
+
+                <div class="chat-heading">
+                    <h2>Customer Support Chat</h2>
+                    <span id="status">Online</span>
+                </div>
+
+                <div id="chatMessages" class="chat-messages">
+
+                    <div class="message assistant">
+                        Hello! Welcome to RecallDesk.
+
+                        I can remember your previous support
+                        conversations and help you solve problems.
+
+                        How can I help you today?
+                    </div>
+
+                </div>
+
+                <div id="memoryStatus" class="memory-status">
+    Waiting for your message...
+</div>
+
+<div class="memory-panel">
+    <h3>🧠 Customer Memory</h3>
+
+    <p class="memory-description">
+        Previous conversations retrieved from Hindsight
+    </p>
+
+    <div id="memoryList">
+        <p class="empty-memory">
+            No memories retrieved yet.
+        </p>
+    </div>
+</div>
+
+                <div class="message-input">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Describe your problem..."
+                    >
+
+                    <button id="sendButton" onclick="sendMessage()">
+                        Send
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            RecallDesk | Powered by Groq AI and Hindsight Memory
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
